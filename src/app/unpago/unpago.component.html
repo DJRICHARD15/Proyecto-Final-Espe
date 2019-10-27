@@ -1,0 +1,52 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-header card-header-danger">
+        <h4 class="card-title">Ordenes De Gasto</h4>
+        <p class="card-category">Sistema para generar órdenes de contado ESPE.</p>
+      </div>
+      <div class="tbl-header">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>N° de Orden</th>
+              <th>N° de Contrato</th>
+              <th>Nombre proveedor</th>
+              <th>Ruc</th>
+              <th>Objeto del contrato</th>
+              <th>Cantidad</th>
+              <th>V. Unitario</th>
+              <th>Total</th>
+              <th>Mes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let contado of contados  | async">
+              <td>{{ contado.numOrden}}</td>
+              <td>{{ contado.numero_contrato }}</td>
+              <td>{{ contado.nombreContratista}}</td>
+              <td>{{ contado.ruc_contratista}}</td>
+              <td>{{ contado.objeto_contrato}}</td>
+              <td>{{ contado.cantidad }}</td>
+              <td>{{ contado.precioUnitario }}</td>
+              <td>{{ contado.total}}</td>
+              <td>{{ contado.mes}}</td>
+               <td>
+                  <img (click)="contadoDetails(contado.id)" src="../../assets/img/detalle.png"
+                      alt="new-img" height="25" width="25">
+              </td>
+              <td>
+                  <img (click)="contadoEdit(contado.id)" src="../../assets/img/editar.png"
+                      alt="new-img" height="25" width="25">
+              </td>
+              <td>
+                  <img (click)="deleteContado(contado.id)" src="../../assets/img/borrar.png"
+                      alt="new-img" height="25" width="25">
+              </td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

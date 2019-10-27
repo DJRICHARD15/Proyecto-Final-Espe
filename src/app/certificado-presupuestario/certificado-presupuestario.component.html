@@ -1,0 +1,463 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-header card-header-danger">
+        <h4 class="card-title">Ordenes De Gasto</h4>
+        <p class="card-category">
+          Sistema para generar órdesnes de pagos ESPE.
+        </p>
+        <div class="row">
+          <div class="subitem col-lg-6 rowup col-md-3 col-sm-3"></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-body">
+          <table class="table">
+            <div class="col-12">
+              <table class="table">
+                <div class="col-12">
+                  <form class="col s6">
+
+
+                   <th>
+                     <!-- <tr *ngFor="let ordenGasto of ordenGastos"> -->
+                          Tipo de Pago
+                          <select name="Tipo de pago" id="Tipo_contrato" class="form-control">
+                              <option selected>Mensual fijo </option>                             
+                              <option selected>Mensaul por Dia</option>
+                              <option selected>100%</option>                                                      
+                              </select>
+                          <div style="margin-left: 30px">
+                          </div>  
+                          <div style="margin-left: 1px">
+                          </div>    
+                        </th>
+
+                    <th>
+                      certId
+                      <input [(ngModel)]="certificadoPresupuestario.certId" type="number" id="Ruc" name="Ruc"
+                        placeholder="Ruc" mainlength="15" maxlength="100 " class="form-control" size="25" required />                    
+
+                    <th>
+                      contrato
+                      <input [(ngModel)]="certificadoPresupuestario.contrato" type="number" id="OrdG" name="OrdG"
+                        placeholder="Orden de Gasto" mainlength="15" maxlength="100 " class="form-control" size="25" required />                     
+                    </th>
+
+                    <th>
+                      mantenimiento
+                      <input [(ngModel)]="certificadoPresupuestario.mantenimiento" type="number" id="OrdG" name="OrdG"
+                        placeholder="Orden de Gasto" mainlength="15" maxlength="100 " class="form-control" size="25" required />                     
+                    </th>
+                    
+                    <th>
+                      valor
+                      <input [(ngModel)]="certificadoPresupuestario.valor" type="number" id="OrdG" name="OrdG"
+                        placeholder="Orden de Gasto" mainlength="15" maxlength="100 " class="form-control" size="25" required />                     
+                    </th>
+
+                     
+                        <div class="col-12">
+
+                         <th>
+                            objeto
+                            <input [(ngModel)]="certificadoPresupuestario.objeto" type="number" id="Orden" name="Orden"
+                              placeholder="Orden" mainlength="15" maxlength="100 " class="form-control" size="10" required />
+                            
+                          </th>
+    
+                          <th>
+                              codigo
+                              <input [(ngModel)]="certificadoPresupuestario.codigo" type="text" id="Descripcion" name="Descripcion" placeholder="Descripcion"
+                                 mainlength="15" maxlength="666" class="form-control" size="80" required />
+                             
+                          </th>
+                         
+                          <th>
+                              descripcion
+                              <input [(ngModel)]="certificadoPresupuestario.descripcion" type="number" id="Cantidad" name="Cantidad"
+                                placeholder="Cantidad" mainlength="15" maxlength="100 " class="form-control" size="10" required />
+                              
+                          </th>
+                          
+
+                          
+                          <th>
+                              ruc
+                              <input [(ngModel)]="certificadoPresupuestario.ruc" type="number" id="PreUni" name="PreUni"
+                                placeholder="Precio Unitario" mainlength="15" maxlength="100 " class="form-control" size="10" required />
+                              
+                          </th>
+                        
+                        <!-- <div class="col-15">
+
+
+
+                        </div>
+
+                          <th>
+                              otroImpuesto
+                              <input [(ngModel)]="ordenGasto.otroImpuesto" type="number" id="IVA" name="IVA" placeholder="IVA"
+                                mainlength="15" maxlength="666" class="form-control" size="25" required />
+                             
+                         </th>
+
+                         <th>
+                            total
+                            <input [(ngModel)]="ordenGasto.total" type="number" id="OtrImp" name="OtrImp" placeholder="Otros Impuestos"
+                              mainlength="15" maxlength="666" class="form-control" size="25" required />
+                           
+                            <th>
+                              codPresupuestraio
+                              <input [(ngModel)]="ordenGasto.codPresupuestario" type="number" id="empleado" name="empleado" placeholder="Otros Impuestos"
+                                mainlength="15" maxlength="666" class="form-control" size="25" required />
+                              
+                       </th>             
+                       <th>
+                        descripcion
+                        <input [(ngModel)]="ordenGasto.descripcion" type="text" id="usuario" name="usuario" placeholder="Otros Impuestos"
+                          mainlength="15" maxlength="666" class="form-control" size="25" required />
+                        
+                 </th>   
+           <th>
+            valcert
+            <input [(ngModel)]="ordenGasto.valCert" type="number" id="certificado" name="certificado" placeholder="Otros Impuestos"
+              mainlength="15" maxlength="666" class="form-control" size="25" required />
+            
+     </th>         
+<th>
+  afectuar
+  <input [(ngModel)]="ordenGasto.afectuar" type="number" id="subtotal" name="subtotal" placeholder="Otros Impuestos"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+  
+</th>    
+<th>
+  saldo
+  <input [(ngModel)]="ordenGasto.saldo" type="number" id="total" name="total" placeholder="total"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+  
+</th> 
+<br>
+<th>
+  ruc
+  <input [(ngModel)]="ordenGasto.ruc" type="number" id="codPresupuestario" name="codPresupuestario" placeholder="Otros Impuestos"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+ 
+</th> 
+<th>
+<th>
+  tipPago
+  <input [(ngModel)]="ordenGasto.tipPago" type="number" id="valCert" name="valCert" placeholder="valCert"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+  
+</th> 
+<th>
+  mesesAcumulables
+  <input [(ngModel)]="ordenGasto.mesesAcumulables" type="number" id="afectuar" name="afectuar" placeholder="afectuar"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+  
+</th>  -->
+<!-- <th>
+  saldo
+  <input [(ngModel)]="detalleCalculo.saldo" type="number" id=" saldo" name=" saldo" placeholder="Otros Impuestos"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+ 
+</th> 
+<th>
+  tipPago
+  <input [(ngModel)]="detalleCalculo.tipPago" type="text" id="tipPago" name="tipPago" placeholder="Otros Impuestos"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+ 
+</th> 
+
+<th>
+  mesesAcumulables
+  <input [(ngModel)]="detalleCalculo.mesesAcumulables" type="text" id="mesesAcumulables" name="mesesAcumulables" placeholder="mesesAcumulables"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+  
+</th> 
+<br> -->
+<!-- <th>
+  datempNombre
+  <input [(ngModel)]="detalleCalculo.datempNombre" type="text" id="datempNombre" name="datempNombre" placeholder="datempNombre"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+  
+</th>  
+<th>
+  dateCargo
+  <input [(ngModel)]="detalleCalculo.dateCargo" type="text" id="dateCargo" name="dateCargo" placeholder="Otros Impuestos"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+ 
+</th>
+<th>
+  ordenCostos
+  <input [(ngModel)]="detalleCalculo.ordenCostos" type="number" id="ordenCostos" name="ordenCostos" placeholder="ordenCostos"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+ 
+</th>
+<th>
+  datempResponsable
+  <input [(ngModel)]="detalleCalculo.datempResponsable" type="text" id="datempResponsable" name="datempResponsable" placeholder="datempResponsable"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+  
+</th>
+<br>
+<th>
+  creacion
+  <input [(ngModel)]="detalleCalculo.creacion" type="text" id="creacion" name="creacion" placeholder="creacion"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+ 
+</th>
+<th>
+  modificar
+  <input [(ngModel)]="detalleCalculo.modificar" type="text" id="modificar" name="modificar" placeholder="modificar"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+ 
+</th>
+<th>
+  fechaModificacion
+  <input [(ngModel)]="detalleCalculo.fechaModificacion" type="datetime-local" id="fechaModificacion" name="fechaModificacion" placeholder="fechaModificacion"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+  
+</th>
+<th>
+  idContrato
+  <input [(ngModel)]="detalleCalculo.idContrato" type="number" id="idContrato" name="idContrato" placeholder="idContrato"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+
+</th>
+<th>
+  proRuc
+  <input [(ngModel)]="detalleCalculo.proRuc" type="number" id="proRuc" name="proRuc" placeholder="proRuc"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+
+</th>
+<th>
+  proNombre
+  <input [(ngModel)]="detalleCalculo.proNombre" type="text" id="proNombre" name="proNombre" placeholder="proNombre"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+ 
+</th>
+<br>
+<th>
+  proTelf
+  <input [(ngModel)]="detalleCalculo.proTelf" type="number" id="proTelf" name="proTelf" placeholder="proTelf"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+
+</th>
+<th>
+  proContacto
+  <input [(ngModel)]="detalleCalculo.proContacto" type="text" id="proContacto" name="proContacto" placeholder="proContacto"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+
+</th>
+<th>
+  proContactDato
+  <input [(ngModel)]="detalleCalculo.proContactDato" type="text" id="proContactDato" name="proContactDato" placeholder="proContactDato"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+
+</th>
+<th>
+  proContactEmail
+  <input [(ngModel)]="detalleCalculo.proContactEmail" type="text" id="proContactEmail" name="proContactEmail" placeholder="proContactEmail"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+ 
+</th>
+<br>
+<th>
+  tipCont
+  <input [(ngModel)]="detalleCalculo.tipCont" type="text" id="tipCont" name="tipCont" placeholder="tipCont"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+
+</th>
+<th>
+  contFecha
+  <input [(ngModel)]="detalleCalculo.contFecha" type="datetime-local" id="contFecha" name="contFecha" placeholder="contFecha"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+  
+</th>
+<th>
+  contPlazo
+  <input [(ngModel)]="detalleCalculo.contPlazo" type="text" id="contPlazo" name="contPlazo" placeholder="contPlazo"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+</th>
+<th>
+  contGarantec
+  <input [(ngModel)]="detalleCalculo.contGarantec" type="date" id=" contGarantec" name=" contGarantec" placeholder=" contGarantec"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+</th>
+<th>
+  ustracontAdmi
+  <input [(ngModel)]="detalleCalculo.ustracontAdmi" type="text" id="ustracontAdmi" name="ustracontAdmi" placeholder="ustracontAdmi"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+</th>
+<th>
+  contTec
+  <input [(ngModel)]="detalleCalculo.contTec" type="text" id="contTec" name="contTec" placeholder="contTec"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+
+</th>
+<br>
+<th>
+  contModPag
+  <input [(ngModel)]="detalleCalculo.contModPag" type="text" id="contModPag" name="contModPag" placeholder="contModPag"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+
+</th>
+<br>
+<th>
+  contFechaIni
+  <input [(ngModel)]="detalleCalculo.contFechaIni" type="datetime-local" id="contFechaIni" name="contFechaIni" placeholder="contFechaIni"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+
+</th>
+<th>
+  contFechaFin
+  <input [(ngModel)]="detalleCalculo.contFechaFin" type="datetime-local" id="contFechaFin" name="contFechaFin" placeholder="contFechaFin"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+
+</th>
+
+<th>
+  contMant
+  <input [(ngModel)]="detalleCalculo.contMant" type="text" id="contMant" name="contMant" placeholder="contMant"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+ 
+</th>
+
+<th>
+  contFechaIniMan
+  <input [(ngModel)]="detalleCalculo.contFechaIniMan" type="datetime-local" id="contFechaIniMan" name="contFechaIniMan" placeholder="contFechaIniMan"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+
+</th>
+
+<th>
+  contFechaFinMan
+  <input [(ngModel)]="detalleCalculo.contFechaFinMan" type="datetime-local" id="fe" name="fe" placeholder=contFechaFinMan"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+
+</th>
+
+<th>
+  contObjeto
+  <input [(ngModel)]="detalleCalculo.contObjeto" type="text" id="contObjeto" name="contObjeto" placeholder="contObjeto"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+  
+</th>
+<br>
+<th>
+  contFechaActDef
+  <input [(ngModel)]="detalleCalculo.contFechaActDef" type="datetime-local" id="contFechaActDef" name="contFechaActDef" placeholder="contFechaActDef"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+ 
+</th>
+
+<th>
+  numMant
+  <input [(ngModel)]="detalleCalculo.numMant" type="text" id="numMant" name="numMant" placeholder="numMant"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+ 
+</th>
+
+<th>
+  mantValor
+  <input [(ngModel)]="detalleCalculo.mantValor" type="number" id="mantValor" name="mantValor" placeholder="mantValor"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+
+</th>
+
+<th>
+  fechaPag
+  <input [(ngModel)]="detalleCalculo.fechaPag" type="number" id="fechaPag" name="fechaPag" placeholder="fechaPag"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+
+</th>
+
+<th>
+  mantIva
+  <input [(ngModel)]="detalleCalculo.mantIva" type="number" id="mantIva" name="mantIva" placeholder="mantIva"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+  
+</th>
+
+<th>
+  mantRuc
+  <input [(ngModel)]="detalleCalculo.mantRuc" type="number" id="mantRuc" name="mantRuc" placeholder="mantRuc"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+  
+</th>
+
+<th>
+  mantInfo
+  <input [(ngModel)]="detalleCalculo.mantInfo" type="text" id="mantInfo" name="mantInfo" placeholder="mantInfo"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+  
+</th>
+
+<th>
+  valor
+  <input [(ngModel)]="detalleCalculo.valor" type="number" id="valor" name="valor" placeholder="valor"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+  
+</th>
+
+<th>
+  objeto
+  <input [(ngModel)]="detalleCalculo.objeto" type="text" id="objeto" name="objeto" placeholder="objeto"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+
+</th>
+
+<th>
+  codigo
+  <input [(ngModel)]="detalleCalculo.codigo" type="number" id="codigo" name="codigo" placeholder="codigo"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+
+</th>
+
+<th>
+  numDet
+  <input [(ngModel)]="detalleCalculo.codigo" type="number" id="numDet" name="numDet" placeholder="numDet"
+    mainlength="15" maxlength="666" class="form-control" size="25" required />
+
+</th> -->
+
+                       <button type="button" class="btn btn-success"(click)="crearOActualizarCertificado(certificadoPresupuestario)">Guardar</button>
+                      </div>
+  </form>
+  
+  
+  <style type="text/css">
+    option {
+      font-family: Verdana, Arial;
+      font-size: 12px;
+      background-color: #e9e9e9;
+    }
+  </style>
+  </div>
+  </table>
+  </div>
+
+              <!-- <table class="table">
+                <th>ordenGasto</th>
+                <th>descripcion</th>
+                <th>datosempleado</th>
+                <th>certifiado</th>
+                <th></th>
+                <th></th>
+
+                <tr *ngFor="let ordenGasto of ordenGastos">
+                  <td>{{ ordenGasto.afectuar }}</td>
+                  <td>{{ ordenGasto.codPresupuestario }}</td>
+                  <td>{{ ordenGasto.descripcion }}</td>
+                  <td>{{ ordenGasto.iva }}</td>
+                  <td>{{ ordenGasto.certificadoPresupuestario.codigo }}</td>
+                </tr>
+              </table> -->
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+<h2>Detalle de órden de gasto</h2>
+
+<hr/>
+<div class="card-body" *ngIf="contado">
+
+    <div class="row">
+
+        <div class="col-4">
+            <label class="font-weight-bold">Mes:</label>
+            <input value="{{contado.mes}}" type="text" class="outlinenone" readonly>
+        </div>
+        <div class="col-4">
+            <label class="font-weight-bold">Número de contrato: </label>
+            <input value="{{contado.numero_contrato}}" type="text" class="outlinenone" readonly>
+        </div>
+        <div class="col-4">
+            <label class="font-weight-bold">Cantidad: </label>
+            <input value="{{contado.cantidad}}" type="text" class="outlinenone" readonly>
+        </div>
+        <div class="col-4">
+            <label class="font-weight-bold">Precio Unitario: </label>
+            <input value="{{contado.precioUnitario}}" type="text" class="outlinenone" readonly>
+        </div>
+        <div class="col-4">
+            <label class="font-weight-bold">Iva: </label>
+            <input value="{{contado.obtencion_iva}}" type="text" class="outlinenone" readonly>
+        </div>
+        <div class="col-4">
+            <label class="font-weight-bold">Otros Impuestos: </label>
+            <input value="{{contado.obtencion_otro_impuesto}}" type="text" class="outlinenone" readonly>
+        </div>
+        <div class="col-12">
+            <label class="font-weight-bold">Descripcion: </label>
+            <input value="{{contado.descripcion}}" type="text" class="outlinenone" readonly>
+        </div>
+        <div class="col-4">
+            <label class="font-weight-bold">No° Contrato/Orden de Compra/Contratacion: </label>
+            <input value="{{contado.numOrden}}" type="text" class="outlinenone" readonly>
+        </div>
+        <div class="col-12">
+            <label class="font-weight-bold">Objeto de Contratación: </label>
+            <input value="{{contado.objeto_contrato}}" type="text" class="outlinenone" readonly>
+        </div>
+        <div class="col-4">
+            <label class="font-weight-bold">Nombre de Contratista: </label>
+            <input value="{{contado.nombreContratista}}" type="text" class="outlinenone" readonly>
+        </div>
+        <div class="col-4">
+            <label class="font-weight-bold">Ruc del Contratista: </label>
+            <input value="{{contado.ruc_contratista}}" type="text" class="outlinenone" readonly>
+        </div>
+        <div class="col-4">
+            <label class="font-weight-bold">Fecha: </label>
+            <input value="{{contado.fechaHoraIni}}" type="text" class="outlinenone" readonly>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+<button (click)="pdf()" class="btn btn-primary">Imprimir</button>
+<button (click)="list()" class="btn btn-primary">Regresar</button><br>

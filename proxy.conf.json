@@ -1,0 +1,7 @@
+{
+    "/redirection/api/session/*" : {
+        "target" : "https://test.placetopay.ec",
+        "secure" : false,
+        "changeOrigin" : true
+    }
+}

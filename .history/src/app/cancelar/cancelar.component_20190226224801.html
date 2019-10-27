@@ -1,0 +1,67 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-danger">
+                <h4 class="card-title">Espemático</h4>
+                <p class="card-category">Sistema para realizar pagos ESPE.</p>
+            </div>
+            <div class="card-body" *ngIf="datos">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <div class="col-12">
+                            <img src="../../assets/img/Pago cancelado.png" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-8">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="font-weight-bold">Referencia:</label>
+                                <p class="card-category">{{responseData.request.payment.reference}}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="font-weight-bold">Descripción:</label>
+                                <p class="card-category">{{responseData.request.payment.description}}</p>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="font-weight-bold">Nombre:</label>
+                                <p class="card-category">{{responseData.request.buyer.name}}</p>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="font-weight-bold">Apellido:</label>
+                                <p class="card-category">{{responseData.request.buyer.surname}}</p>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="font-weight-bold">Cédula:</label>
+                                <p class="card-category">{{responseData.request.buyer.document}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-end">
+                    <div class="col-lg-4 col-md-4 col-sm-4 ">
+                        <div class="card card-stats">
+                            <div class="card-header card-header-danger card-header-icon">
+                                <div class="card-icon">
+                                    <i class="material-icons">done_all</i>
+                                </div>
+                                <p class="card-category">Session</p>
+                                <h4 class="card-title text-danger">{{responseData.requestId}}</h4>
+                                <p class="card-category">Estado</p>
+                                <h4 class="card-title text-danger">{{responseData.status.status}}</h4>
+                            </div>
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <p class="text-primary"><i class="material-icons">message</i>{{responseData.status.message}}</p>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <p class="text-dark"><i class="material-icons">watch_later</i>{{responseData.status.date}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

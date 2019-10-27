@@ -1,0 +1,68 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-danger">
+                <h4 class="card-title">Ordenes De Gasto</h4>
+                <p class="card-category">Sistema para generar órdenes de pagos ESPE.</p>
+            </div>
+            <div class="tbl-header">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>N° de orden</th>
+                            <th>N° de Contrato</th>
+                            <th>Nombre Proveedor</th>
+                            <th>Ruc</th>
+                            <th>Objeto del contrato</th>
+                            <th>Meses plazos</th>
+                            <th>Cantidad</th>
+                            <th>V. unitario</th>
+                            <th>Total</th>
+                            <th>Credito</th>
+                            <!-- <th>Fecha</th> -->
+                            <th>Mes</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let mensualidad of mensualidades  | async">
+                            <td>{{mensualidad.numOrden}}</td>
+                            <td>{{mensualidad.numero_contrato }}</td>
+                            <td>{{mensualidad.nombreContratista}}</td>
+                            <td>{{mensualidad.ruc_contratista}}</td>
+                            <td>{{mensualidad.objeto_contrato}}</td>
+                            <td>{{mensualidad.meses_acumulables}}</td>
+                            <td>{{mensualidad.cantidad }}</td>
+                            <td>{{mensualidad.precioUnitario}}</td>
+                            <td>{{mensualidad.total}}</td>
+                            <td>{{mensualidad.saldo}}</td>
+                            <!-- <td>{{ mensualidad.fechaHoraIni }}</td> -->
+                            <td>{{mensualidad.mes}}
+                            <td>
+                                <img (click)="mensualidadDetails(mensualidad.id)" src="../../assets/img/detalle.png"
+                                    alt="new-img" height="25" width="25">
+                            </td>
+                            <td>
+                                <img (click)="mensualidadEdit(mensualidad.id)" src="../../assets/img/editar.png"
+                                    alt="new-img" height="25" width="25">
+                            </td>
+                            <td>
+                                <img (click)="deleteMensualidad(mensualidad.id)" src="../../assets/img/borrar.png"
+                                    alt="new-img" height="25" width="25">
+                            </td>
+                            <!-- <td>
+                                <img (click)="pdf()" src="../../assets/img/imprimir.png" alt="new-img" height="25"
+                                    width="25">
+                            </td> -->
+                            <!-- <td><button (click)="deleteMensualidad(mensualidad.id)"
+                                    class="btn btn-danger">Delete</button>
+                                <button (click)="mensualidadEdit(mensualidad.id)" class="btn btn-info"
+                                    style="margin-left: 10px">Edit</button>
+                                <button (click)="mensualidadDetails(mensualidad.id)" class="btn btn-info"
+                                    style="margin-left: 10px">Details</button></td> -->
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

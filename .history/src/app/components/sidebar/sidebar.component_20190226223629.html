@@ -1,0 +1,26 @@
+<div class="logo">
+    <img class="mx-auto d-block" src="/assets/img/Espe-Angular-Logo.png" />
+</div>
+<div class="sidebar-wrapper">
+    <div class="container">
+        <fieldset class="form-group">
+            <legend>Ordenes de Gastos</legend>
+            <!-- <span class="bmd-form-group">
+                <label for="cedula" class="font-weight-bold">Cédula/Pasaporte:
+                </label>
+                <div class="input-group no-border">
+                    <input type="text" #cedula class="form-control" placeholder="Ingrese su cédula...">
+                </div>
+            </span> -->
+            <div class="row">
+                <div class="col-12"> 
+                    <button mat-raised-button class="btn btn-success btn-round btn-sm pull-left" (click)="buscar(cedula.value)">
+                        <i class="material-icons">search</i>Buscar</button>
+                    <button mat-raised-button class="btn btn-danger btn-round btn-sm pull-right" (click)="inicio();cedula.value=''">
+                        <i class="material-icons">clear</i>Nuevo</button>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <p-toast [style]="{'marginTop': '80px'}" [style.z-index]="9999"></p-toast>
+</div>

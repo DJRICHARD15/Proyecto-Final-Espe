@@ -1,0 +1,69 @@
+<h2>Detalle de órden de gasto</h2>
+
+<hr/>
+<div class="card-body" *ngIf="mensualidad">
+
+    <div class="row">
+        <div class="col-2">
+            <label class="font-weight-bold">Tipo de pago:</label>
+            <input value="{{mensualidad.tipo_pago}}" type="text" class="outlinenone" readonly>
+        </div>
+        <div class="col-4">
+
+            <input value="{{mensualidad.meses_acumulables}}" type="text" class="outlinenone" readonly>
+        </div>
+        <div class="col-4">
+            <label class="font-weight-bold">Mes:</label>
+            <input value="{{mensualidad.mes}}" type="text" class="outlinenone" readonly>
+        </div>
+        <div class="col-4">
+            <label class="font-weight-bold">Número de contrato: </label>
+            <input value="{{mensualidad.numero_contrato}}" type="text" class="outlinenone" readonly>
+        </div>
+        <div class="col-4">
+            <label class="font-weight-bold">Cantidad: </label>
+            <input value="{{mensualidad.cantidad}}" type="text" class="outlinenone" readonly>
+        </div>
+        <div class="col-4">
+            <label class="font-weight-bold">Precio Unitario: </label>
+            <input value="{{mensualidad.precioUnitario}}" type="text" class="outlinenone" readonly>
+        </div>
+        <div class="col-4">
+            <label class="font-weight-bold">Iva: </label>
+            <input value="{{mensualidad.obtencion_iva}}" type="text" class="outlinenone" readonly>
+        </div>
+        <div class="col-4">
+            <label class="font-weight-bold">Otros Impuestos: </label>
+            <input value="{{mensualidad.obtencion_otro_impuesto}}" type="text" class="outlinenone" readonly>
+        </div>
+        <div class="col-12">
+            <label class="font-weight-bold">Descripcion: </label>
+            <input value="{{mensualidad.descripcion}}" type="text" class="outlinenone" readonly>
+        </div>
+        <div class="col-4">
+            <label class="font-weight-bold">No° Contrato/Orden de Compra/Contratacion: </label>
+            <input value="{{mensualidad.numOrden}}" type="text" class="outlinenone" readonly>
+        </div>
+        <div class="col-12">
+            <label class="font-weight-bold">Objeto de Contratación: </label>
+            <input value="{{mensualidad.objeto_contrato}}" type="text" class="outlinenone" readonly>
+        </div>
+        <div class="col-4">
+            <label class="font-weight-bold">Nombre de Contratista: </label>
+            <input value="{{mensualidad.nombreContratista}}" type="text" class="outlinenone" readonly>
+        </div>
+        <div class="col-4">
+            <label class="font-weight-bold">Ruc del Contratista: </label>
+            <input value="{{mensualidad.ruc_contratista}}" type="text" class="outlinenone" readonly>
+        </div>
+        <div class="col-4">
+            <label class="font-weight-bold">Fecha: </label>
+            <input value="{{mensualidad.fechaHoraIni}}" type="text" class="outlinenone" readonly>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+<button (click)="pdf()" class="btn btn-primary">Imprimir</button>
+<button (click)="list()" class="btn btn-primary">Regresar</button><br>

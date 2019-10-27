@@ -1,0 +1,158 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-danger">
+                <h4 class="card-title">Órdenes De Gasto</h4>
+                <p class="card-category">
+                    Editar Órden de Gasto
+                </p>
+
+            </div>
+
+            <div class="card-body">
+                <form (ngSubmit)="onSubmit()">
+                    <div class="row">
+                        <div class="col-2">
+                            <label class="font-weight-bold">Tipo de pago:</label>
+                            <select [(ngModel)]="mensualidad.tipo_pago" name="Tipo de pago" class="form-control" class="select-css">
+                                <option>Mensual</option>
+                                <option>Dia</option>
+                            </select>
+                        </div>
+
+                        <div class="col-4">
+                            <label class="font-weight-bold"></label>
+                            <div [formGroup]="editForm">
+                                <input [(ngModel)]="mensualidad.meses_acumulables" type="number" placeholder="Ingrese el Dia o Mes a pagar" id="mesDia" formControlName="mesDia" name="mesDia" class="outlinenone" required />
+                                <span class="text-danger" *ngIf="editForm.controls['mesDia'].errors?.pattern">Mes o Dia
+                                    invalido</span>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <label class="font-weight-bold">Mes:</label>
+                            <select [(ngModel)]="mensualidad.mes" name="Mes" id="Mes" class="select-css">
+                                <option selected hidden>Mes</option>
+                                <option value="Enero">Enero</option>
+                                <option value="Febrero">Febrero</option>
+                                <option value="Marzo">Marzo</option>
+                                <option value="Abril">Abril</option>
+                                <option value="Mayo">Mayo</option>
+                                <option Value="Junio">Junio</option>
+                                <option value="Julio">Julio</option>
+                                <option value="Agosto">Agosto</option>
+                                <option value="Septiembre">Septiembre</option>
+                                <option value="Octubre">Octubre</option>
+                                <option value="Noviembre">Noviembre</option>
+                                <option value="Diciembre">Diciembre</option>
+                            </select>
+                        </div>
+
+                        <!-- <div class="col-4">
+                        <label class="font-weight-bold">Numero Orden: </label>
+                        <div [formGroup]="editForm">
+                            <input [(ngModel)]="mensualidad.id_orden" type="number" id="Orden" formControlName="Orden" name="Orden" placeholder="ORD" class="outlinenone" required />
+                            <span class="text-danger" *ngIf="editForm.controls['Orden'].errors?.pattern">numero de orden invalido</span>
+                        </div>
+                    </div> -->
+
+                        <div class="col-4">
+                            <label class="font-weight-bold">Número del contrato: </label>
+                            <div [formGroup]="editForm">
+                                <input [(ngModel)]="mensualidad.numero_contrato" formControlName="Valor" type="number" id="Valor" name="Valor" placeholder="Valor " class="outlinenone" required />
+                                <span class="text-danger" *ngIf="editForm.controls['Valor'].errors?.pattern">numero de
+                                    orden invalido</span>
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <label class="font-weight-bold">Cantidad: </label>
+                            <div [formGroup]="editForm">
+                                <input [(ngModel)]="mensualidad.cantidad" type="number" id="Cantidad" name="Cantidad" formControlName="Cantidad" placeholder="Cantidad" class="outlinenone" required />
+                                <span class="text-danger" *ngIf="editForm.controls['Cantidad'].errors?.pattern">numero
+                                    de cantidad invalido</span>
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <label class="font-weight-bold">Precio Unitario: </label>
+                            <div [formGroup]="editForm">
+                                <input [(ngModel)]="mensualidad.precioUnitario" type="number" id="precioUnitario" name="precioUnitario" formControlName="precioUnitario" placeholder="presio unitario" class="outlinenone" required />
+                                <span class="text-danger" *ngIf="editForm.controls['precioUnitario'].errors?.pattern">Precio Unitario
+                                    invalido</span>
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <label class="font-weight-bold">Iva: </label>
+                            <div [formGroup]="editForm">
+                                <input [(ngModel)]="mensualidad.obtencion_iva" type="number" step="0.01" id="Iva" name="Iva" formControlName="Iva" placeholder=" 0.12" class="outlinenone" required />
+                                <span class="text-danger" *ngIf="editForm.controls['Iva'].errors?.pattern">Iva
+                                    invalido</span>
+                            </div>
+                        </div>
+
+
+                        <div class="col-4">
+                            <label class="font-weight-bold">Otros Impuestos: </label>
+                            <div [formGroup]="editForm">
+                                <input [(ngModel)]="mensualidad.obtencion_otro_impuesto" type="number" step="0.01" id="OtrImp" formControlName="OtrImp" name="OtrImp" placeholder="0.15" class="outlinenone" />
+                                <span class="text-danger" *ngIf="editForm.controls['OtrImp'].errors?.pattern">Otros
+                                    impuestos invalido</span>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="font-weight-bold">Descripcion: </label>
+                            <div [formGroup]="editForm">
+                                <input [(ngModel)]="mensualidad.descripcion" class="outlinenone" type="text" id="Descripcion" name="Descripcion" formControlName="Descripcion" placeholder="Descripción" required />
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-4">
+                            <label class="font-weight-bold">No° Contrato/Orden de Compra/Contratacion: </label>
+                            <div [formGroup]="editForm">
+                                <input [(ngModel)]="mensualidad.numOrden" type="number" id="numeroContratoE" name="numeroContratoE" class="outlinenone" formControlName="numeroContratoE" placeholder="Numero de contrato / Orden de Contrato/ Contratación" />
+                                <span class="text-danger" *ngIf="editForm.controls['numeroContratoE'].errors?.pattern">Número de contrato
+                                    invalido</span>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="font-weight-bold">Objeto de Contratación: </label>
+                            <div [formGroup]="editForm">
+                                <input [(ngModel)]="mensualidad.objeto_contrato" type="text" id="ObjetoContrato" formControlName="ObjetoContrato" name="ObjetoContrato" placeholder="Objeto de la contratacion" class="outlinenone" required />
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <label class="font-weight-bold">Nombre de Contratista: </label>
+                            <div [formGroup]="editForm">
+                                <input [(ngModel)]="mensualidad.nombreContratista" type="text" id="NombreContratist" name="NombreContratista" formControlName="NombreContratist" placeholder="Nombre del Contratista" class="outlinenone" size="45" required />
+                                <span class="text-danger" *ngIf="editForm.controls['NombreContratist'].errors?.pattern">nombre invalido</span>
+                            </div>
+                        </div>
+
+
+                        <div class="col-4">
+                            <label class="font-weight-bold">Ruc del Contratista: </label>
+                            <div [formGroup]="editForm">
+                                <input [(ngModel)]="mensualidad.ruc_contratista" type="number" id="RucContratista" name="RucContratista" class="outlinenone" formControlName="RucContratista" placeholder="Ruc Contratista" required />
+                                <span class="text-danger" *ngIf="editForm.controls['RucContratista'].errors?.pattern">Ruc invalido</span>
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <label class="font-weight-bold">Fecha: </label>
+                            <div [formGroup]="editForm">
+                                <input [(ngModel)]="mensualidad.fechaHoraIni" *ngFor="let format of formatsDateTest" type="text" formControlName="horaFech" id="horaFech" name="horaFech" class="outlinenone" value="{{dateNow | date: format}}" required />
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success">Guardar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-danger">
+                <h4 class="card-title">Ordenes De Gasto</h4>
+                <p class="card-category">
+                    Sistema para generar órdesnes de pagos ESPE.
+                </p>
+                <div class="row">
+                    <div class="subitem col-lg-6 rowup col-md-3 col-sm-3"></div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-body">
+                    <table class="table">
+                        <div class="col-12">
+                            <table class="table">
+                                <div class="col-12">
+                                    <form class="col s6">
+
+
+
+
+                                        <th>
+                                            Ruc
+                                            <input [(ngModel)]="contrato.ruc" type="number" id="Ruc" name="Ruc" placeholder="Ruc" mainlength="15" maxlength="100 " class="form-control" size="25" required />
+
+                                            <th>
+                                                Email
+                                                <input [(ngModel)]="contrato.email" type="text" id="email" name="email" placeholder="ejm:contratista@espe.edu.ec" mainlength="15" maxlength="100 " class="form-control" size="25" required />
+                                            </th>
+
+                                            <th>
+                                                Nombre
+                                                <input [(ngModel)]="contrato.nombre" type="text" id="nombre" name="Nombre" placeholder="Nombre Contratista" mainlength="15" maxlength="100 " class="form-control" size="25" required />
+                                            </th>
+
+                                            <th>
+                                                Objeto Contratacion
+                                                <input [(ngModel)]="contrato.objeto" type="text" id="objeto" name="Objeto" placeholder="Objeto Contratacion" mainlength="15" maxlength="100 " class="form-control" size="25" required />
+                                            </th>
+
+
+
+
+
+                                            <button type="button" class="btn btn-success" (click)="crearOActualizarContrato(contrato)">Crear</button>
+
+                                    </form>
+
+
+                                    <style type="text/css">
+                                        option {
+                                            font-family: Verdana, Arial;
+                                            font-size: 12px;
+                                            background-color: #e9e9e9;
+                                        }
+                                    </style>
+                                </div>
+                            </table>
+                        </div>
+
+                        <!-- <table class="table">
+                <th>ordenGasto</th>
+                <th>descripcion</th>
+                <th>datosempleado</th>
+                <th>certifiado</th>
+                <th></th>
+                <th></th>
+
+                <tr *ngFor="let ordenGasto of ordenGastos">
+                  <td>{{ ordenGasto.afectuar }}</td>
+                  <td>{{ ordenGasto.codPresupuestario }}</td>
+                  <td>{{ ordenGasto.descripcion }}</td>
+                  <td>{{ ordenGasto.iva }}</td>
+                  <td>{{ ordenGasto.certificadoPresupuestario.codigo }}</td>
+                </tr>
+              </table> -->
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,93 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-header card-header-danger">
+        <h4 class="card-title">Ordenes De Gasto</h4>
+        <p class="card-category">
+          Sistema para generar órdesnes de pagos ESPE.
+        </p>
+        <div class="row">
+          <div class="subitem col-lg-6 rowup col-md-3 col-sm-3"></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-body">
+          <table class="table">
+            <div class="col-12">
+              <table class="table">
+                <div class="col-12">
+                  <form class="col s6">
+
+
+                   <th>
+                     <!-- <tr *ngFor="let ordenGasto of ordenGastos"> -->
+                          Tipo de Pago
+                          <select name="Tipo de pago" id="Tipo_contrato" class="form-control">
+                              <option selected>Mensual fijo </option>                             
+                              <option selected>Mensaul por Dia</option>
+                              <option selected>100%</option>                                                      
+                              </select>
+                          <div style="margin-left: 30px">
+                          </div>  
+                          <div style="margin-left: 1px">
+                          </div>    
+                        </th>
+
+                    <th>
+                      certId
+                      <input [(ngModel)]="detalleCalculo.numDet" type="number" id="Ruc" name="Ruc"
+                        placeholder="Ruc" mainlength="15" maxlength="100 " class="form-control" size="25" required />                    
+
+                    <th>
+                      contrato
+                      <input [(ngModel)]="detalleCalculo.ordenGastos" type="number" id="OrdG" name="OrdG"
+                        placeholder="Orden de Gasto" mainlength="15" maxlength="100 " class="form-control" size="25" required />                     
+                    </th>
+
+                    <th>
+                      mantenimiento
+                      <input [(ngModel)]="detalleCalculo.detcalValor" type="number" id="OrdG" name="OrdG"
+                        placeholder="Orden de Gasto" mainlength="15" maxlength="100 " class="form-control" size="25" required />                     
+                    </th>
+                        
+                  
+                       
+
+                       <button type="button" class="btn btn-success"(click)="crearOActualizarDetalleCalculo(detalleCalculo)">enviar</button>
+                      
+  </form>
+  
+  
+  <style type="text/css">
+    option {
+      font-family: Verdana, Arial;
+      font-size: 12px;
+      background-color: #e9e9e9;
+    }
+  </style>
+  </div>
+  </table>
+  </div>
+
+              <!-- <table class="table">
+                <th>ordenGasto</th>
+                <th>descripcion</th>
+                <th>datosempleado</th>
+                <th>certifiado</th>
+                <th></th>
+                <th></th>
+
+                <tr *ngFor="let ordenGasto of ordenGastos">
+                  <td>{{ ordenGasto.afectuar }}</td>
+                  <td>{{ ordenGasto.codPresupuestario }}</td>
+                  <td>{{ ordenGasto.descripcion }}</td>
+                  <td>{{ ordenGasto.iva }}</td>
+                  <td>{{ ordenGasto.certificadoPresupuestario.codigo }}</td>
+                </tr>
+              </table> -->
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
